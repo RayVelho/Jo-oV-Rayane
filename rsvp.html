@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RSVP — Confirmação</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topo-menor">
+    <h1 class="titulo-pagina">Confirmação de Presença</h1>
+    <p class="subtitulo">Por favor confirme até <strong>20/03/2028</strong></p>
+  </header>
+
+  <main class="form-container">
+    <form id="rsvpForm" class="card-form">
+      <label class="lbl">Seu nome</label>
+      <input class="inp" name="nome" type="text" placeholder="Digite seu nome completo" required />
+
+      <div class="acompanhantes-header">
+        <span class="lbl">Acompanhante(s)</span>
+        <button type="button" id="addAcomp" class="btn btn-outlined">+ Adicionar acompanhante</button>
+      </div>
+      <div id="listaAcompanhantes"></div>
+
+      <fieldset class="fieldset">
+        <legend class="lbl">Você vai conseguir celebrar conosco?</legend>
+        <label class="radio"><input type="radio" name="confirmacao" value="Sim" required /> <span>Sim! 💚 Não perderia por nada.</span></label>
+        <label class="radio"><input type="radio" name="confirmacao" value="Não" /> <span>Infelizmente não poderei 😢</span></label>
+      </fieldset>
+
+      <label class="lbl">Observação (opcional)</label>
+      <textarea class="inp" name="obs" rows="4" placeholder="Ex.: restrição alimentar, recado..."></textarea>
+
+      <button class="btn btn-lg" type="submit">Enviar confirmação</button>
+    </form>
+
+    <p class="msg-final">Aguardamos a sua presença com muito carinho 💕</p>
+  </main>
+
+  <footer class="rodape"><a class="link-voltar" href="index.html">⬅ Voltar ao início</a></footer>
+
+  <script>
+    // campos dinâmicos de acompanhantes
+    const btnAdd = document.getElementById('addAcomp');
+    const lista = document.getElementById('listaAcompanhantes');
+
+    btnAdd.addEventListener('click', () => {
+      const div = document.createElement('div');
+      div.className = 'linha-acomp';
+      div.innerHTML = `<input class="inp" type="text" name="acompanhante[]" placeholder="Nome do acompanhante" />
+                       <button type="button" class="btn btn-danger">Remover</button>`;
+      div.querySelector('button').addEventListener('click', ()=> div.remove());
+      lista.appendChild(div);
+    });
+
+    // envio local (demo) - substitua por integração com Google Forms/Sheets se desejar
+    document.getElementById('rsvpForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const form = e.target;
+      alert('Obrigado! Sua confirmação foi registrada localmente (para teste).');
+      form.reset();
+      lista.innerHTML = '';
+    });
+  </script>
+</body>
+</html>
