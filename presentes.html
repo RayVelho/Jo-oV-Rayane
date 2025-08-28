@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lista de Presentes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topo-menor">
+    <h1 class="titulo-pagina">Lista de Presentes</h1>
+    <p class="subtitulo">Escolha um presente ou contribua via PIX</p>
+  </header>
+
+  <main class="secao">
+    <div class="grid-presentes">
+      <!-- 10 exemplos editáveis -->
+      <div class="card-presente" data-descricao="3 meses de Crossfit para o noivo">
+        <img class="img-presente" src="https://placehold.co/600x400?text=Crossfit" alt="Crossfit">
+        <div class="conteudo-presente">
+          <h3>3 meses de Crossfit para o noivo usar sunga no verão</h3>
+          <div class="preco">R$ 630,00</div>
+          <button class="btn btn-block btn-presentear">Presentear</button>
+        </div>
+      </div>
+
+      <div class="card-presente" data-descricao="Massagem relax">
+        <img class="img-presente" src="https://placehold.co/600x400?text=Spa" alt="Spa">
+        <div class="conteudo-presente">
+          <h3>Massagem relaxante pré-casamento</h3>
+          <div class="preco">R$ 220,00</div>
+          <button class="btn btn-block btn-presentear">Presentear</button>
+        </div>
+      </div>
+
+      <div class="card-presente" data-descricao="Jantar romântico">
+        <img class="img-presente" src="https://placehold.co/600x400?text=Jantar" alt="Jantar">
+        <div class="conteudo-presente">
+          <h3>Jantar romântico pós-casamento</h3>
+          <div class="preco">R$ 280,00</div>
+          <button class="btn btn-block btn-presentear">Presentear</button>
+        </div>
+      </div>
+
+      <div class="card-presente" data-descricao="Passeio de balão">
+        <img class="img-presente" src="https://placehold.co/600x400?text=Bal%C3%A3o" alt="Balão">
+        <div class="conteudo-presente">
+          <h3>Passeio de balão ao amanhecer</h3>
+          <div class="preco">R$ 950,00</div>
+          <button class="btn btn-block btn-presentear">Presentear</button>
+        </div>
+      </div>
+
+      <div class="card-presente" data-descricao="Cota Lua de Mel">
+        <img class="img-presente" src="https://placehold.co/600x400?text=Lua+de+Mel" alt="Lua de Mel">
+        <div class="conteudo-presente">
+          <h3>Cota Lua de Mel</h3>
+          <div class="preco">R$ 200,00</div>
+          <button class="btn btn-block btn-presentear">Presentear</button>
+        </div>
+      </div>
+
+      <div class="card-presente" data-descricao="Tour de vinhos">
+        <img class="img-presente" src="https://placehold.co/600x400?text=Vinhos" alt="Vinhos">
+        <div class="conteudo-presente">
+          <h3>Tour de vinhos na serra</h3>
+          <div class="preco">R$ 350,00</div>
+          <button class="btn btn-block btn-presentear">Presentear</button>
+        </div>
+      </div>
+
+      <div class="card-presente" data-descricao="Kit churrasco">
+        <img class="img-presente" src="https://placehold.co/600x400?text=Churrasco" alt="Churrasco">
+        <div class="conteudo-presente">
+          <h3>Kit churrasco do noivo</h3>
+          <div class="preco">R$ 180,00</div>
+          <button class="btn btn-block btn-presentear">Presentear</button>
+        </div>
+      </div>
+
+      <div class="card-presente" data-descricao="Jogo de cama">
+        <img class="img-presente" src="https://placehold.co/600x400?text=Enxoval" alt="Enxoval">
+        <div class="conteudo-presente">
+          <h3>Jogo de cama 600 fios</h3>
+          <div class="preco">R$ 420,00</div>
+          <button class="btn btn-block btn-presentear">Presentear</button>
+        </div>
+      </div>
+
+      <div class="card-presente" data-descricao="Robô aspirador">
+        <img class="img-presente" src="https://placehold.co/600x400?text=Casa" alt="Casa">
+        <div class="conteudo-presente">
+          <h3>Robô aspirador (cota)</h3>
+          <div class="preco">R$ 300,00</div>
+          <button class="btn btn-block btn-presentear">Presentear</button>
+        </div>
+      </div>
+
+      <div class="card-presente" data-descricao="Jogo de panelas">
+        <img class="img-presente" src="https://placehold.co/600x400?text=Panelas" alt="Panelas">
+        <div class="conteudo-presente">
+          <h3>Jogo de panelas antiaderente</h3>
+          <div class="preco">R$ 520,00</div>
+          <button class="btn btn-block btn-presentear">Presentear</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seção PIX (aparece ao clicar em Presentear) -->
+    <section id="pagamento" class="pagamento card-form">
+      <h2>💚 Presentear via PIX</h2>
+      <p id="presenteEscolhido" class="subtexto">Presente escolhido: <em>Nenhum</em></p>
+      <div class="pix-grid">
+        <div class="pix-qr"><img id="qrPix" src="" alt="QR Pix" /></div>
+        <div>
+          <p><strong>Chave PIX (telefone):</strong> <span id="pixTel">48 998422151</span></p>
+          <p><strong>Nome:</strong> Rayane Velho da Silva</p>
+          <p><strong>Banco:</strong> C6 Bank</p>
+          <button id="btnCopiar" class="btn btn-outlined">Copiar chave PIX</button>
+        </div>
+      </div>
+      <p class="nota">Depois de presentear, envie uma mensagem se quiser — agradecemos muito! 💌</p>
+    </section>
+  </main>
+
+  <footer class="rodape"><a class="link-voltar" href="index.html">⬅ Voltar ao início</a></footer>
+
+  <script>
+    const cards = document.querySelectorAll('.btn-presentear');
+    const qrImg = document.getElementById('qrPix');
+    const pixTel = document.getElementById('pixTel').textContent.replace(/\s+/g,'');
+    const escolhidoEl = document.getElementById('presenteEscolhido');
+    const pagamento = document.getElementById('pagamento');
+
+    function gerarQR(texto){
+      return `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(texto)}`;
+    }
+
+    cards.forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        const card = e.target.closest('.card-presente');
+        const desc = card.getAttribute('data-descricao') || 'Presente';
+        escolhidoEl.innerHTML = `Presente escolhido: <strong>${desc}</strong>`;
+        const payload = `PIX telefone: +55${pixTel} | Nome: Rayane Velho da Silva | Banco: C6 Bank | Referência: ${desc}`;
+        qrImg.src = gerarQR(payload);
+        pagamento.scrollIntoView({behavior:'smooth'});
+      });
+    });
+
+    document.getElementById('btnCopiar').addEventListener('click', ()=>{
+      navigator.clipboard.writeText('+55 '+pixTel).then(()=> alert('Chave PIX copiada!'));
+    });
+  </script>
+</body>
+</html>
