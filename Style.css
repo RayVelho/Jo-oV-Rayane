@@ -1,0 +1,75 @@
+:root{
+  --olive:#4a6b51;
+  --olive-dark:#36533e;
+  --olive-100:#eef5f0;
+  --bg:#ffffff;
+  --text:#333;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:var(--text); text-align:center;
+}
+
+/* topo / monograma / nomes */
+.topo{ padding:28px 16px 8px; }
+.topo-menor{ padding:18px 14px; }
+.monograma-grande{ width: clamp(260px, 60vw, 380px); height:auto; display:block; margin: 0 auto 12px; }
+.nomes-cursivos{ font-family: 'Dancing Script', cursive; font-size: clamp(22px,6vw,48px); color:var(--olive); margin:6px 0; }
+.data-casamento{ font-size:20px; color:var(--olive); margin:6px 0 14px; }
+
+/* seções */
+.secao{ padding:20px 16px; }
+.rodape{ padding:18px 12px; color:#555; }
+
+/* countdown estilo "calendário" */
+.countdown-wrapper{ background: var(--olive-100); padding:18px 8px; }
+.countdown{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; max-width:960px; margin:0 auto; }
+.countdown .box{ background:var(--olive); color:#fff; min-width:110px; border-radius:14px; padding:16px 12px; box-shadow:0 8px 20px rgba(0,0,0,.12); }
+.countdown .num{ font-size:30px; font-weight:800; }
+.countdown .rotulo{ font-size:13px; opacity:.95; margin-top:6px; }
+
+/* botões */
+.btn{ display:inline-block; background:var(--olive); color:#fff; border:2px solid var(--olive); padding:12px 18px; border-radius:28px; text-decoration:none; font-weight:700; transition:.25s; cursor:pointer; }
+.btn:hover{ background:#fff; color:var(--olive); }
+.btn-lg{ font-size:18px; min-width:240px; display:inline-block; margin:8px auto; }
+
+/* formulários / card */
+.form-container{ padding:18px 12px 28px; }
+.card-form{ text-align:left; background:#fff; max-width:720px; margin:10px auto; padding:20px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,.08); }
+.lbl{ display:block; font-weight:700; margin:10px 0 6px; color:var(--olive-dark); }
+.inp, textarea{ width:100%; padding:12px 14px; border-radius:10px; border:1px solid #dfeae1; outline:none; font-size:15px; }
+.fieldset{ border:1px solid #dfeae1; border-radius:10px; padding:12px; margin:10px 0; }
+
+/* acompanhantes */
+.acompanhantes-header{ display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.linha-acomp{ display:flex; gap:10px; margin:8px 0; }
+.linha-acomp .inp{ flex:1; }
+
+/* grid de presentes */
+.grid-presentes{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:16px; max-width:1100px; margin:0 auto; padding:8px; }
+.card-presente{ background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,.08); display:flex; flex-direction:column; }
+.img-presente{ width:100%; height:180px; object-fit:cover; }
+.conteudo-presente{ padding:12px; text-align:left; }
+.conteudo-presente h3{ margin:6px 0 10px; color:var(--olive-dark); font-size:16px; }
+.preco{ display:inline-block; background:var(--olive); color:#fff; padding:8px 12px; border-radius:10px; font-weight:800; margin-bottom:10px; }
+
+/* pagamento PIX */
+.pagamento{ margin-top:20px; max-width:900px; margin-left:auto; margin-right:auto; padding:12px; }
+.pix-grid{ display:grid; gap:14px; align-items:center; }
+.pix-qr img{ width:240px; height:240px; object-fit:contain; border-radius:12px; }
+@media(min-width:700px){ .pix-grid{ grid-template-columns: 300px 1fr; } }
+
+/* hero mapa cronograma */
+.hero{ position:relative; min-height:80vh; background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center; }
+.hero-overlay{ position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.28)); display:flex; align-items:center; justify-content:center; }
+.hero-titulo{ position:relative; color:#fff; font-size:clamp(22px,5vw,46px); text-shadow:0 6px 18px rgba(0,0,0,.4); margin:0; padding:16px; }
+
+/* cronograma lista */
+.cron-lista{ list-style:none; padding:0; max-width:760px; margin:12px auto; }
+.cron-item{ display:flex; justify-content:space-between; align-items:center; gap:12px; background:#fff; margin:10px 0; padding:16px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,.06); }
+.hora{ font-size:28px; font-weight:900; color:var(--olive); min-width:140px; text-align:left; }
+.evento{ font-size:18px; font-weight:700; color:#333; }
+
+/* utilitários */
+.link-voltar{ color:var(--olive); text-decoration:none; font-weight:700; }
+.msg-final{ color:var(--olive); font-weight:700; margin-top:14px; font-size:16px; }
