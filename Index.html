@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>João & Rayane — Casamento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topo">
+    <img src="images/monograma.png" alt="Monograma dos noivos" class="monograma-grande" />
+    <h1 class="nomes-cursivos">João Vitor & Rayane</h1>
+    <p class="data-casamento">29 de Abril de 2028</p>
+  </header>
+
+  <section class="secao countdown-wrapper">
+    <div class="countdown">
+      <div class="box"><div class="num" id="cd-dias">0</div><div class="rotulo">Dias</div></div>
+      <div class="box"><div class="num" id="cd-horas">0</div><div class="rotulo">Horas</div></div>
+      <div class="box"><div class="num" id="cd-min">0</div><div class="rotulo">Minutos</div></div>
+    </div>
+  </section>
+
+  <section class="secao botoes-wrapper">
+    <a class="btn btn-lg" href="rsvp.html">📋 Confirmar presença (RSVP)</a><br>
+    <a class="btn btn-lg" href="presentes.html">🎁 Lista de Presentes</a><br>
+    <a class="btn btn-lg" href="cronograma.html">📍 Localização e cronograma</a>
+  </section>
+
+  <footer class="rodape">
+    <p>Com muito carinho, esperamos você no nosso grande dia 💚</p>
+  </footer>
+
+  <script>
+    const alvo = new Date("April 29, 2028 14:30:00").getTime();
+    const elDias = document.getElementById('cd-dias');
+    const elHoras = document.getElementById('cd-horas');
+    const elMin = document.getElementById('cd-min');
+
+    function atualiza() {
+      const agora = Date.now();
+      let diff = alvo - agora;
+      if (diff < 0) diff = 0;
+      const dias = Math.floor(diff / (1000*60*60*24));
+      const horas = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      const minutos = Math.floor((diff % (1000*60*60)) / (1000*60));
+      elDias.textContent = dias;
+      elHoras.textContent = horas;
+      elMin.textContent = minutos;
+    }
+
+    atualiza();
+    setInterval(atualiza, 30000); // atualiza a cada 30s (sem segundos)
+  </script>
+</body>
+</html>
